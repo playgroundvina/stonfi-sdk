@@ -120,13 +120,16 @@ export class RouterV1 extends Contract {
       gasAmount?: AmountType;
       forwardGasAmount?: AmountType;
       queryId?: QueryIdType;
+      proxyContractAddress?: AddressType;
     },
   ): Promise<SenderArguments> {
     const [offerJettonWalletAddress, askJettonWalletAddress] =
       await Promise.all([
         provider
           .open(JettonMinter.create(params.offerJettonAddress))
-          .getWalletAddress(params.userWalletAddress),
+          .getWalletAddress(
+            params.proxyContractAddress ?? params.userWalletAddress,
+          ),
         provider
           .open(JettonMinter.create(params.askJettonAddress))
           .getWalletAddress(this.address),
