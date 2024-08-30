@@ -65,16 +65,16 @@
   },
   "scripts": {
     "prepare": "lefthook install",
-    "preinstall": "npx only-allow pnpm",
-    "format": "pnpm run /^format:.*/",
+    "preinstall": "npx only-allow npm",
+    "format": "npm run /^format:.*/",
     "format:biome": "biome format ./* --write",
-    "lint": "pnpm run /^lint:.*/",
+    "lint": "npm run /^lint:.*/",
     "lint:tsc": "tsc --noEmit --pretty",
     "lint:biome": "biome lint ./*",
     "test": "vitest",
     "dev": "vite build --watch",
     "build": "vite build",
-    "prepublishOnly": "pnpm i && biome check ./* && pnpm run test --run && pnpm run build"
+    "prepublishOnly": "npm i && biome check ./* && npm run test --run && npm run build"
   },
   "peerDependencies": {
     "@ston-fi/api": "^0.9.0",
