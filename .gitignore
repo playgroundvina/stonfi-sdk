@@ -8,7 +8,6 @@ pnpm-debug.log*
 
 # Runtime data
 node_modules
-dist
 coverage
 *.local
 

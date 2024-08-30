@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@ston-fi/api':
-        specifier: ^0.7.0
-        version: 0.7.4
+        specifier: ^0.9.0
+        version: 0.9.0
       '@ton/ton':
         specifier: ^13.9.0 || ^14.0.0
-        version: 13.11.1(@ton/core@0.56.3)(@ton/crypto@3.2.0)
+        version: 13.11.1(@ton/core@0.56.3(@ton/crypto@3.2.0))(@ton/crypto@3.2.0)
     devDependencies:
       '@biomejs/biome':
         specifier: ^1.7.3
@@ -26,7 +26,7 @@ importers:
         version: 1.6.10
       rollup-plugin-visualizer:
         specifier: ^5.11.0
-        version: 5.12.0
+        version: 5.12.0(rollup@3.29.4)
       typescript:
         specifier: ^5.4.2
         version: 5.4.5
@@ -35,7 +35,7 @@ importers:
         version: 4.5.3(@types/node@20.12.7)
       vite-plugin-dts:
         specifier: 1.7.1
-        version: 1.7.1(vite@4.5.3)
+        version: 1.7.1(@types/node@20.12.7)(rollup@3.29.4)(vite@4.5.3(@types/node@20.12.7))
       vitest:
         specifier: 0.25.6
         version: 0.25.6
@@ -320,8 +320,8 @@ packages:
   '@rushstack/ts-command-line@4.19.2':
     resolution: {integrity: sha512-cqmXXmBEBlzo9WtyUrHtF9e6kl0LvBY7aTSVX4jfnBfXWZQWnPq9JTFPlQZ+L/ZwjZ4HrNwQsOVvhe9oOucZkw==}
 
-  '@ston-fi/api@0.7.4':
-    resolution: {integrity: sha512-MSx6VAx8st8PhjKd6gQq4xUiP8hEtM7bCaxoM/qS2OwCNZysRdKWYWCG2h+4AsiahSLiXZoJHguUZY1u2ZaZDA==}
+  '@ston-fi/api@0.9.0':
+    resolution: {integrity: sha512-X5AL6fj0e135hGU3lRjlMPjHw0vbkaE3XfrAfAz/Q9Tz76kIM2BxlI0bPc/z0OIkjJe/tNBsuP1bpKuTv+Y/JQ==}
 
   '@ton/core@0.56.3':
     resolution: {integrity: sha512-HVkalfqw8zqLLPehtq0CNhu5KjVzc7IrbDwDHPjGoOSXmnqSobiWj8a5F+YuWnZnEbQKtrnMGNOOjVw4LG37rg==}
@@ -415,8 +415,8 @@ packages:
     engines: {node: '>=10.12.0'}
     hasBin: true
 
-  camelcase-keys@9.1.2:
-    resolution: {integrity: sha512-nFhquwz7p3nWSHeVYoIkefNPdR2Rt4EuKs9/gaqx3DhJL6HkNHIEcsH+D6N4NvW/MHxc4TT+rp0rc4K7E7x9hw==}
+  camelcase-keys@9.1.3:
+    resolution: {integrity: sha512-Rircqi9ch8AnZscQcsA1C47NFdaO3wukpmIRzYcDOrmvgt78hM/sj5pZhZNec2NM12uk5vTwRHZ4anGcrC4ZTg==}
     engines: {node: '>=16'}
 
   camelcase@8.0.0:
@@ -922,8 +922,8 @@ packages:
   node-fetch-native@1.6.4:
     resolution: {integrity: sha512-IhOigYzAKHd244OC0JIMIUrjzctirCmPkaIfhDeGcEETWof5zKYUW7e7MYvChGWh/4CJeXEgsRyGzuF334rOOQ==}
 
-  ofetch@1.3.3:
-    resolution: {integrity: sha512-s1ZCMmQWXy4b5K/TW9i/DtiN8Ku+xCiHcjQ6/J/nDdssirrQNOoB165Zu8EqLMA2lln1JUth9a0aW9Ap2ctrUg==}
+  ofetch@1.3.4:
+    resolution: {integrity: sha512-KLIET85ik3vhEfS+3fDlc/BAZiAp+43QEC/yCo5zkNoY2YaKvNkOaFr/6wCFgFH1kuYQM5pMNi0Tg8koiIemtw==}
 
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
@@ -1445,23 +1445,23 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@microsoft/api-extractor-model@7.28.14':
+  '@microsoft/api-extractor-model@7.28.14(@types/node@20.12.7)':
     dependencies:
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 4.1.0
+      '@rushstack/node-core-library': 4.1.0(@types/node@20.12.7)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.43.1':
+  '@microsoft/api-extractor@7.43.1(@types/node@20.12.7)':
     dependencies:
-      '@microsoft/api-extractor-model': 7.28.14
+      '@microsoft/api-extractor-model': 7.28.14(@types/node@20.12.7)
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 4.1.0
+      '@rushstack/node-core-library': 4.1.0(@types/node@20.12.7)
       '@rushstack/rig-package': 0.5.2
-      '@rushstack/terminal': 0.10.1
-      '@rushstack/ts-command-line': 4.19.2
+      '@rushstack/terminal': 0.10.1(@types/node@20.12.7)
+      '@rushstack/ts-command-line': 4.19.2(@types/node@20.12.7)
       lodash: 4.17.21
       minimatch: 3.0.8
       resolve: 1.22.8
@@ -1492,13 +1492,15 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@rollup/pluginutils@5.1.0':
+  '@rollup/pluginutils@5.1.0(rollup@3.29.4)':
     dependencies:
       '@types/estree': 1.0.5
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    optionalDependencies:
+      rollup: 3.29.4
 
-  '@rushstack/node-core-library@3.66.1':
+  '@rushstack/node-core-library@3.66.1(@types/node@20.12.7)':
     dependencies:
       colors: 1.2.5
       fs-extra: 7.0.1
@@ -1507,8 +1509,10 @@ snapshots:
       resolve: 1.22.8
       semver: 7.5.4
       z-schema: 5.0.5
+    optionalDependencies:
+      '@types/node': 20.12.7
 
-  '@rushstack/node-core-library@4.1.0':
+  '@rushstack/node-core-library@4.1.0(@types/node@20.12.7)':
     dependencies:
       fs-extra: 7.0.1
       import-lazy: 4.0.0
@@ -1516,31 +1520,35 @@ snapshots:
       resolve: 1.22.8
       semver: 7.5.4
       z-schema: 5.0.5
+    optionalDependencies:
+      '@types/node': 20.12.7
 
   '@rushstack/rig-package@0.5.2':
     dependencies:
       resolve: 1.22.8
       strip-json-comments: 3.1.1
 
-  '@rushstack/terminal@0.10.1':
+  '@rushstack/terminal@0.10.1(@types/node@20.12.7)':
     dependencies:
-      '@rushstack/node-core-library': 4.1.0
+      '@rushstack/node-core-library': 4.1.0(@types/node@20.12.7)
       supports-color: 8.1.1
+    optionalDependencies:
+      '@types/node': 20.12.7
 
-  '@rushstack/ts-command-line@4.19.2':
+  '@rushstack/ts-command-line@4.19.2(@types/node@20.12.7)':
     dependencies:
-      '@rushstack/terminal': 0.10.1
+      '@rushstack/terminal': 0.10.1(@types/node@20.12.7)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
     transitivePeerDependencies:
       - '@types/node'
 
-  '@ston-fi/api@0.7.4':
+  '@ston-fi/api@0.9.0':
     dependencies:
-      camelcase-keys: 9.1.2
+      camelcase-keys: 9.1.3
       decamelize-keys: 2.0.1
-      ofetch: 1.3.3
+      ofetch: 1.3.4
 
   '@ton/core@0.56.3(@ton/crypto@3.2.0)':
     dependencies:
@@ -1557,7 +1565,7 @@ snapshots:
       jssha: 3.2.0
       tweetnacl: 1.0.3
 
-  '@ton/ton@13.11.1(@ton/core@0.56.3)(@ton/crypto@3.2.0)':
+  '@ton/ton@13.11.1(@ton/core@0.56.3(@ton/crypto@3.2.0))(@ton/crypto@3.2.0)':
     dependencies:
       '@ton/core': 0.56.3(@ton/crypto@3.2.0)
       '@ton/crypto': 3.2.0
@@ -1673,7 +1681,7 @@ snapshots:
       yargs: 16.2.0
       yargs-parser: 20.2.9
 
-  camelcase-keys@9.1.2:
+  camelcase-keys@9.1.3:
     dependencies:
       camelcase: 8.0.0
       map-obj: 5.0.0
@@ -2118,7 +2126,7 @@ snapshots:
 
   node-fetch-native@1.6.4: {}
 
-  ofetch@1.3.3:
+  ofetch@1.3.4:
     dependencies:
       destr: 2.0.3
       node-fetch-native: 1.6.4
@@ -2191,12 +2199,14 @@ snapshots:
     dependencies:
       glob: 7.2.3
 
-  rollup-plugin-visualizer@5.12.0:
+  rollup-plugin-visualizer@5.12.0(rollup@3.29.4):
     dependencies:
       open: 8.4.2
       picomatch: 2.3.1
       source-map: 0.7.4
       yargs: 17.7.2
+    optionalDependencies:
+      rollup: 3.29.4
 
   rollup@2.79.1:
     optionalDependencies:
@@ -2319,11 +2329,11 @@ snapshots:
 
   validator@13.11.0: {}
 
-  vite-plugin-dts@1.7.1(vite@4.5.3):
+  vite-plugin-dts@1.7.1(@types/node@20.12.7)(rollup@3.29.4)(vite@4.5.3(@types/node@20.12.7)):
     dependencies:
-      '@microsoft/api-extractor': 7.43.1
-      '@rollup/pluginutils': 5.1.0
-      '@rushstack/node-core-library': 3.66.1
+      '@microsoft/api-extractor': 7.43.1(@types/node@20.12.7)
+      '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
+      '@rushstack/node-core-library': 3.66.1(@types/node@20.12.7)
       debug: 4.3.4
       fast-glob: 3.3.2
       fs-extra: 10.1.0
@@ -2337,21 +2347,21 @@ snapshots:
 
   vite@3.2.10(@types/node@20.12.7):
     dependencies:
-      '@types/node': 20.12.7
       esbuild: 0.15.18
       postcss: 8.4.38
       resolve: 1.22.8
       rollup: 2.79.1
     optionalDependencies:
+      '@types/node': 20.12.7
       fsevents: 2.3.3
 
   vite@4.5.3(@types/node@20.12.7):
     dependencies:
-      '@types/node': 20.12.7
       esbuild: 0.18.20
       postcss: 8.4.38
       rollup: 3.29.4
     optionalDependencies:
+      '@types/node': 20.12.7
       fsevents: 2.3.3
 
   vitest@0.25.6:
