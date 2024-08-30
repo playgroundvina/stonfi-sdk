@@ -204,6 +204,7 @@ export class RouterV1 extends Contract {
       gasAmount?: AmountType;
       forwardGasAmount?: AmountType;
       queryId?: QueryIdType;
+      proxyContractAddress?: AddressType;
     },
   ): Promise<SenderArguments> {
     return await this.getSwapJettonToJettonTxParams(provider, {

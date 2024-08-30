@@ -116,6 +116,7 @@ export declare class RouterV1 extends Contract {
         gasAmount?: AmountType;
         forwardGasAmount?: AmountType;
         queryId?: QueryIdType;
+        proxyContractAddress?: AddressType;
     }): Promise<SenderArguments>;
     sendSwapJettonToTon(provider: ContractProvider, via: Sender, params: Parameters<RouterV1["getSwapJettonToTonTxParams"]>[1]): Promise<void>;
     /**

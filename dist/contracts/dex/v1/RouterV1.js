@@ -44,7 +44,9 @@ const _RouterV1 = class _RouterV12 extends Contract {
    */
   async getSwapJettonToJettonTxParams(provider, params) {
     const [offerJettonWalletAddress, askJettonWalletAddress] = await Promise.all([
-      provider.open(JettonMinter.create(params.offerJettonAddress)).getWalletAddress(params.proxyContractAddress ?? params.userWalletAddress),
+      provider.open(JettonMinter.create(params.offerJettonAddress)).getWalletAddress(
+        params.proxyContractAddress ?? params.userWalletAddress
+      ),
       provider.open(JettonMinter.create(params.askJettonAddress)).getWalletAddress(this.address)
     ]);
     const forwardPayload = await this.createSwapBody({
@@ -53,7 +55,9 @@ const _RouterV1 = class _RouterV12 extends Contract {
       askJettonWalletAddress,
       referralAddress: params.referralAddress
     });
-    const forwardTonAmount = BigInt(params.forwardGasAmount ?? this.gasConstants.swapJettonToJetton.forwardGasAmount);
+    const forwardTonAmount = BigInt(
+      params.forwardGasAmount ?? this.gasConstants.swapJettonToJetton.forwardGasAmount
+    );
     const body = createJettonTransferMessage({
       queryId: params.queryId ?? 0,
       amount: params.offerAmount,
@@ -62,7 +66,9 @@ const _RouterV1 = class _RouterV12 extends Contract {
       forwardTonAmount,
       forwardPayload
     });
-    const value = BigInt(params.gasAmount ?? this.gasConstants.swapJettonToJetton.gasAmount);
+    const value = BigInt(
+      params.gasAmount ?? this.gasConstants.swapJettonToJetton.gasAmount
+    );
     return {
       to: offerJettonWalletAddress,
       value,
@@ -122,7 +128,9 @@ const _RouterV1 = class _RouterV12 extends Contract {
       askJettonWalletAddress,
       referralAddress: params.referralAddress
     });
-    const forwardTonAmount = BigInt(params.forwardGasAmount ?? this.gasConstants.swapTonToJetton.forwardGasAmount);
+    const forwardTonAmount = BigInt(
+      params.forwardGasAmount ?? this.gasConstants.swapTonToJetton.forwardGasAmount
+    );
     return await provider.open(params.proxyTon).getTonTransferTxParams({
       queryId: params.queryId ?? 0,
       tonAmount: params.offerAmount,
@@ -162,7 +170,9 @@ const _RouterV1 = class _RouterV12 extends Contract {
       routerWalletAddress,
       minLpOut: params.minLpOut
     });
-    const forwardTonAmount = BigInt(params.forwardGasAmount ?? this.gasConstants.provideLpJetton.forwardGasAmount);
+    const forwardTonAmount = BigInt(
+      params.forwardGasAmount ?? this.gasConstants.provideLpJetton.forwardGasAmount
+    );
     const body = createJettonTransferMessage({
       queryId: params.queryId ?? 0,
       amount: params.sendAmount,
@@ -171,7 +181,9 @@ const _RouterV1 = class _RouterV12 extends Contract {
       forwardTonAmount,
       forwardPayload
     });
-    const value = BigInt(params.gasAmount ?? this.gasConstants.provideLpJetton.gasAmount);
+    const value = BigInt(
+      params.gasAmount ?? this.gasConstants.provideLpJetton.gasAmount
+    );
     return {
       to: jettonWalletAddress,
       value,
@@ -179,7 +191,10 @@ const _RouterV1 = class _RouterV12 extends Contract {
     };
   }
   async sendProvideLiquidityJetton(provider, via, params) {
-    const txParams = await this.getProvideLiquidityJettonTxParams(provider, params);
+    const txParams = await this.getProvideLiquidityJettonTxParams(
+      provider,
+      params
+    );
     return via.send(txParams);
   }
   /**
@@ -201,7 +216,9 @@ const _RouterV1 = class _RouterV12 extends Contract {
       routerWalletAddress,
       minLpOut: params.minLpOut
     });
-    const forwardTonAmount = BigInt(params.forwardGasAmount ?? this.gasConstants.provideLpTon.forwardGasAmount);
+    const forwardTonAmount = BigInt(
+      params.forwardGasAmount ?? this.gasConstants.provideLpTon.forwardGasAmount
+    );
     return await provider.open(params.proxyTon).getTonTransferTxParams({
       queryId: params.queryId ?? 0,
       tonAmount: params.sendAmount,
@@ -212,7 +229,10 @@ const _RouterV1 = class _RouterV12 extends Contract {
     });
   }
   async sendProvideLiquidityTon(provider, via, params) {
-    const txParams = await this.getProvideLiquidityTonTxParams(provider, params);
+    const txParams = await this.getProvideLiquidityTonTxParams(
+      provider,
+      params
+    );
     return via.send(txParams);
   }
   /**
@@ -283,7 +303,9 @@ const _RouterV1 = class _RouterV12 extends Contract {
   }
 };
 _RouterV1.version = DEX_VERSION.v1;
-_RouterV1.address = address("EQB3ncyBUTjZUA5EnFKR5_EnOMI9V1tTEAAPaiU71gc4TiUt");
+_RouterV1.address = address(
+  "EQB3ncyBUTjZUA5EnFKR5_EnOMI9V1tTEAAPaiU71gc4TiUt"
+);
 _RouterV1.gasConstants = {
   swapJettonToJetton: {
     gasAmount: toNano("0.22"),
