@@ -174,6 +174,7 @@ export class BaseRouterV2 extends Contract {
       gasAmount?: AmountType;
       forwardGasAmount?: AmountType;
       queryId?: QueryIdType;
+      proxyContractAddress?: AddressType;
     },
   ): Promise<SenderArguments> {
     const contractAddress = this.address;
@@ -182,7 +183,10 @@ export class BaseRouterV2 extends Contract {
       await Promise.all([
         provider
           .open(JettonMinter.create(params.offerJettonAddress))
-          .getWalletAddress(params.userWalletAddress),
+          .getWalletAddress(
+            params.proxyContractAddress ?? params.userWalletAddress,
+          ),
+
         provider
           .open(JettonMinter.create(params.askJettonAddress))
           .getWalletAddress(contractAddress),
@@ -256,6 +260,7 @@ export class BaseRouterV2 extends Contract {
       gasAmount?: AmountType;
       forwardGasAmount?: AmountType;
       queryId?: QueryIdType;
+      proxyContractAddress?: AddressType;
     },
   ): Promise<SenderArguments> {
     return await this.getSwapJettonToJettonTxParams(provider, {

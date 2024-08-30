@@ -39,7 +39,7 @@ const _BaseRouterV2 = class _BaseRouterV22 extends Contract.Contract {
   async getSwapJettonToJettonTxParams(provider, params) {
     const contractAddress = this.address;
     const [offerJettonWalletAddress, askJettonWalletAddress] = await Promise.all([
-      provider.open(JettonMinter.JettonMinter.create(params.offerJettonAddress)).getWalletAddress(params.userWalletAddress),
+      provider.open(JettonMinter.JettonMinter.create(params.offerJettonAddress)).getWalletAddress(params.proxyContractAddress ?? params.userWalletAddress),
       provider.open(JettonMinter.JettonMinter.create(params.askJettonAddress)).getWalletAddress(contractAddress)
     ]);
     const forwardTonAmount = BigInt(
