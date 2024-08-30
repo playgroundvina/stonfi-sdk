@@ -64,7 +64,6 @@
     }
   },
   "scripts": {
-    "prepare": "lefthook install",
     "format": "npm run /^format:.*/",
     "format:biome": "biome format ./* --write",
     "lint": "npm run /^lint:.*/",
